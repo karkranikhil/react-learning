@@ -1,13 +1,16 @@
-# A Complete Intro to React
+# React learning
 
-Welcome to a complete intro to React! The site actual workshop material for this repo can be found [here][gh-page]. On the master branch you will find the completed project. On the start branch you will find the barebones boilerplater of the project designed to help you get started.
+## Yarn
+Yarn is a Dependency manager and its really fast because yarn do package installation tasks in parallel.
+Every time a module is added, Yarn creates (or updates) a yarn.lock file. This way you can guarantee another machine installs the exact same package, while still having a range of allowed versions defined in package.json.
+Yarn does some better caching
 
-## Contributing
+## If you haven't installed yarn, install it via
 
-Please contribute, file issues, and make PRs. More than anything I'm sure there are typos abounding.
+  npm intall --global yarn
 
-## License
 
-MIT
-
-[gh-page]: http://btholt.github.io/complete-intro-to-react/
+# chapter 1
+  1)index.html setup
+  2)basic component creation
+  3)props and attributes

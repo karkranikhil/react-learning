@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>video</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="node_modules/react/dist/react.js"></script>
+<script src="node_modules/react-dom/dist/react-dom.js"></script>
+<script>
+    const ce = React.createElement
+    const MyTitle = function (props) {
+        return ce('div', null,
+                ce('h1', null, props.title))
+    }
+    const MyFirstComponent = function () {
+        return ce('div', {'id':'mycomponenet'},
+                ce(MyTitle,{title:'Breathe'}),
+                ce(MyTitle,{title:'Shaktiman'}),
+                ce(MyTitle,{title:'Tom & jerry'}),
+                ce(MyTitle,{title:'speed'})
+        )
+    }
+    ReactDOM.render(
+            ce(MyFirstComponent),
+            document.getElementById('app')
+    )
+</script>
+</body>
+</html>
