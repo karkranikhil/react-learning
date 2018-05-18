@@ -15,14 +15,14 @@
     const ce = React.createElement
     const MyTitle = function (props) {
         return ce('div', null,
-                ce('h1', null, props.title))
+                ce('h1', {style:{color:props.color}}, props.title))
     }
     const MyFirstComponent = function () {
         return ce('div', {'id':'mycomponenet'},
-                ce(MyTitle,{title:'Breathe'}),
-                ce(MyTitle,{title:'Shaktiman'}),
-                ce(MyTitle,{title:'Tom & jerry'}),
-                ce(MyTitle,{title:'speed'})
+                ce(MyTitle,{title:'Breathe', color:'YelloGreen'}),
+                ce(MyTitle,{title:'Shaktiman', color:'GreenYellow'}),
+                ce(MyTitle,{title:'Tom & jerry', color:'LimeGreen'}),
+                ce(MyTitle,{title:'speed', color:'peru'})
         )
     }
     ReactDOM.render(
