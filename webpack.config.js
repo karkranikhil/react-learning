@@ -17,7 +17,8 @@ module.exports={
     chunks:true
   },
   devServer: {
-    publicPath:'/public/' //from where our bundle is serve from
+    publicPath:'/public/', //from where our bundle is serve from
+    historyApiFallback:true //something send it to client, client will worried about routing
   },
   module: {
     rules: [  //rules that webpack use for the loaders(tools used by webpack)
