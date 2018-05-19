@@ -20,7 +20,7 @@
 ##### 1) Prettier
 <p>install it via </p>
      
-    "yarn global add prettier"
+    yarn global add prettier
 <p>Below command help you to do the prettify the code</p>
 
     prettier --single-quote  --print-width=120 --write ClientApp.jsx 
@@ -31,25 +31,29 @@
         
 <p>we have configured it in package.json so run below command will perform the same</p>        
     
-     "yarn format"
+     yarn format
          
 ##### 2) Eslisnt
 <p>we are using airbnb linting rules.we have configured it in package.json so run below command will perform the same </p>
      
-    "yarn lint"
+    yarn lint
 
 ##### 3) Webpack & Babel
 <p>transformation from jsx to js done by babel</p>
 <p>below command generates the bundle.js in public folder manually</p>
      
-    "./node_modules/.bin/webpack js/ClientApp.jsx public/bundle.js"
+    ./node_modules/.bin/webpack js/ClientApp.jsx public/bundle.js
 <p>if we configure webpack.config.js it will automatically bundle the code we don't need to specify the file name</p>
 
     ./node_modules/.bin/webpack 
         
 <p>we have configured it in package.json so run below command will perform the webpack and continously watch the changes</p>        
     
-     "yarn watch"    
+     yarn watch
+<p>We have configured the webpack dev server</p>
+    
+    ./node_modules/.bin/webpack-dev-server"     
+        
 
      
      
