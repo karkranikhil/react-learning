@@ -81,9 +81,13 @@
       </BrowserRouter>
      
      
+### Map()
+<p>The map() method is used to apply a function on every element in an array. A new array is then returned.</p>     
+<p>We used map to itrate over the JSON(preload.shows) and takeout each show name and display it inside h1 tag</p>     
      
-     
-     
+     {preload.shows.map((show)=>(
+           <h3>{show.title}</h3>
+         ))}
      
      
      
