@@ -17,7 +17,7 @@
 
 #chapter 2
 ### Tooling
-#####1) Prettier
+##### 1) Prettier
 <p>install it via </p>
      
     "yarn global add prettier"
@@ -33,12 +33,12 @@
     
      "yarn format"
          
-#####2) Eslisnt
+##### 2) Eslisnt
 <p>we are using airbnb linting rules.we have configured it in package.json so run below command will perform the same </p>
      
     "yarn lint"
 
-#####3) Webpack & Babel
+##### 3) Webpack & Babel
 <p>transformation from jsx to js done by babel</p>
 <p>below command generates the bundle.js in public folder manually</p>
      
