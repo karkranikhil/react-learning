@@ -52,9 +52,33 @@
      yarn watch
 <p>We have configured the webpack dev server</p>
     
-    ./node_modules/.bin/webpack-dev-server"     
-        
+    ./node_modules/.bin/webpack-dev-server"   
+    
+### Routing
 
+##### 1)HashRouter
+<p>A Router that uses the hash portion of the URL (i.e. window.location.hash) to keep your UI in sync with the URL.</p>
+<p>Hash history does not support location.key or location.state. </p>
+
+    <HashRouter>
+        <div className = 'app'>
+          <Route exact path="/" component={Landing}/>
+          <Route exact path="/search" component={Search}/>
+        </div>
+      </HashRouter>
+
+##### 1)BrowserRouter      
+<p>A Router that uses the HTML5 history API (pushState, replaceState and the popstate event) to keep your UI in sync with the URL.</p>
+        
+    <BrowserRouter>
+        <div className = 'app'>
+          <Switch>
+          <Route exact path="/" component={Landing}/>
+          <Route exact path="/search" component={Search}/>
+          <Route component={FourOhFour}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
      
      
      
