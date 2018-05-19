@@ -7,7 +7,7 @@
 
 ## If you haven't installed yarn, install it via
 
-  npm intall --global yarn
+  npm install --global yarn
 
 
 # chapter 1
@@ -16,40 +16,52 @@
   3)props and attributes<br/>
 
 #chapter 2
-    1)Tooling
-        # a)prettier 
-        install it via "yarn global add prettier"
+### Tooling
+#####1) Prettier
+<p>install it via </p>
+     
+    "yarn global add prettier"
+<p>Below command help you to do the prettify the code</p>
 
-         Below command help you to do the prettify the code
-         
-         prettier --single-quote  --print-width=120 --write ClientApp.jsx 
-
-         or
-
-         prettier --write --single-quote  --print-width=120 --parse=flow --tab-width=2 "js/**/*.{js,jsx}" 
+    prettier --single-quote  --print-width=120 --write ClientApp.jsx 
+    
+             or
+    
+    prettier --write --single-quote  --print-width=120 --parse=flow --tab-width=2 "js/**/*.{js,jsx}"     
         
-         we have configured it in package.json so run below command will perform the same
+<p>we have configured it in package.json so run below command will perform the same</p>        
+    
+     "yarn format"
          
-          "yarn format"
-          
-    2)Eslisnt
-    
-    we are using airbnb linting rules.we have configured it in package.json so run below command will perform the same    
-    
+#####2) Eslisnt
+<p>we are using airbnb linting rules.we have configured it in package.json so run below command will perform the same </p>
+     
     "yarn lint"
+
+#####3) Webpack & Babel
+<p>transformation from jsx to js done by babel</p>
+<p>below command generates the bundle.js in public folder manually</p>
+     
+    "./node_modules/.bin/webpack js/ClientApp.jsx public/bundle.js"
+<p>if we configure webpack.config.js it will automatically bundle the code we don't need to specify the file name</p>
+
+    ./node_modules/.bin/webpack 
+        
+<p>we have configured it in package.json so run below command will perform the webpack and continously watch the changes</p>        
     
-    3)Webpack & Babel
+     "yarn watch"    
+
      
-     transformation from jsx to js done by babel
-     below command generates the bundle.js in public folder manually
      
-     ./node_modules/.bin/webpack js/ClientApp.jsx public/bundle.js
      
-     if we configure webpack.config.js it will automatically bundle the code we don't need to specify the file name
      
-    ./node_modules/.bin/webpack
+     
+     
+     
+     
     
-     we have configured it in package.json so run below command will perform the webpack and continously watch the changes
+    
      
-     yarn watch
+     
+     
     
