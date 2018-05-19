@@ -4,6 +4,7 @@
   "description": "react learning from zero to hero",
   "main": "server.js",
   "scripts": {
+    "dev":"webpack-dev-server",
     "format": "prettier --write --single-quote  --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "api": "node ratingsAPI.js",
     "lint":"eslint **/*.{js,jsx} --quiet",
