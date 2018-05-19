@@ -19,6 +19,12 @@ module.exports={
   module: {
     rules: [  //rules that webpack use for the loaders(tools used by webpack)
       {
+        enforce: "pre", // it ensure eslint run before babel
+        test:/\.jsx?$/,
+        loader: "eslint-loader",
+        exclude:/node_module/
+      },
+      {
         test:/\.jsx?$/, //js or jsx
         loader: "babel-loader"
       }
