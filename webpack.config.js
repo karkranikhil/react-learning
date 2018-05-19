@@ -16,6 +16,9 @@ module.exports={
     reasons: true,
     chunks:true
   },
+  devServer: {
+    publicPath:'/public/' //from where our bundle is serve from
+  },
   module: {
     rules: [  //rules that webpack use for the loaders(tools used by webpack)
       {
