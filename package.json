@@ -4,7 +4,12 @@
   "description": "react learning from zero to hero",
   "main": "server.js",
   "scripts": {
-    "api": "node ratingsAPI.js"
+    "dev":"webpack-dev-server",
+    "format": "prettier --write --single-quote  --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
+    "api": "node ratingsAPI.js",
+    "lint":"eslint **/*.{js,jsx} --quiet",
+    "watch":"webpack --watch",
+    "build":"webpack"
   },
   "dependencies": {
     "axios": "0.16.1",
@@ -41,7 +46,7 @@
     "babel-preset-env": "1.5.1",
     "babel-preset-react": "6.24.1",
     "enzyme": "2.8.2",
-    "eslint": "3.19.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "15.0.1",
     "eslint-config-prettier": "2.1.1",
     "eslint-config-react": "1.1.7",
@@ -50,7 +55,7 @@
     "eslint-plugin-flowtype": "2.33.0",
     "eslint-plugin-import": "2.3.0",
     "eslint-plugin-jsx-a11y": "5.0.3",
-    "eslint-plugin-prettier": "2.1.1",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "7.0.1",
     "flow-bin": "0.47.0",
     "jest": "20.0.4",
