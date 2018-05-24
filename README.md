@@ -91,6 +91,13 @@
      
      
      
+ ### PropType
+ 
+PropTypes exports a range of validators that can be used to make sure the data you receive is valid. When an invalid value is provided for a prop, a warning will be shown in the JavaScript console. For performance reasons, propTypes is only checked in development mode.
+Below is the command to install the propTypes package.
+        
+    npm install --save prop-types
+       
     
     
      

@@ -1,4 +1,6 @@
 import React from 'react';
+import {shape, string} from 'prop-types'
+// shape just means object
 
 const ShowCard = props => (
   <div className="show-card">
@@ -10,5 +12,15 @@ const ShowCard = props => (
     </div>
   </div>
 );
+ShowCard.defaultProps ={
 
+}
+ShowCard.propTypes ={
+  show:shape({
+    poster:string.isRequired,
+    title:string.isRequired,
+    year:string.isRequired,
+    description:string.isRequired
+  }).isRequired
+}
 export default ShowCard;
