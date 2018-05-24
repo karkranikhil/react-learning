@@ -10,13 +10,12 @@
   npm install --global yarn
 
 
-# chapter 1
+# Basic Setup (branch chapter 1)
   1)index.html setup<br/>
   2)basic component creation<br/>
   3)props and attributes<br/>
 
-#chapter 2
-### Tooling
+# Tooling (branch chapter 2)
 ##### 1) Prettier
 <p>install it via </p>
      
@@ -54,7 +53,7 @@
     
     ./node_modules/.bin/webpack-dev-server"   
     
-### Routing
+# Routing
 
 ##### 1)HashRouter
 <p>A Router that uses the hash portion of the URL (i.e. window.location.hash) to keep your UI in sync with the URL.</p>
@@ -98,7 +97,39 @@ Below is the command to install the propTypes package.
         
     npm install --save prop-types
        
+       
+### ... Spread operator
+It is used to split an array into a list of comma-separated values which can be used in various places such as function arguments or array matching.
+
+        function addThreeNumbers(a, b, c) {
+          return a + b + c;
+        }
+        
+        let sampleArr = [1, 2, 3];
+        console.log(addThreeNumbers(...sampleArr)); //6 
+        
+The spread operator can also be used with objects, though it is not a part of the ES6 spec, so you might need to use an extra plugin in your transpiler for it, or be careful with its browser support.
     
+        let obj1 = {a: 1, b: 2, c: 3};
+        
+        let obj2 = {p: 4,q: 5,r: 6};
+        
+        let obj3 = {...obj1, ...obj2 };
+        /* 
+          obj3 = {a: 1,b: 2, c: 3,p: 4, q: 5, r: 6 }
+        */
+
+### Styled components
+styled-components, the Modern Way to Handle CSS in React.
+styled-components utilises tagged template literals to style your components.
+It removes the mapping between components and styles. This means that when you're defining your styles, you're actually creating a normal React component, that has your styles attached to it.
+Below is the example of styled component
+
+        const Image = styled.img`
+          width:46%;
+          float:left;
+          margin-right:10px;
+        `
     
      
      

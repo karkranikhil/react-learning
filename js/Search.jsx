@@ -6,7 +6,7 @@ const Search =()=>(
   <div className='search'>
     {/* <pre><code>{JSON.stringify(preload, null, 4)}</code></pre> */}
     {preload.shows.map((show)=>(
-      <ShowCard show = {show} key={show.title}/>
+      <ShowCard show = {show} key={show.imdbID}/>
     ))}
   </div>
 )
