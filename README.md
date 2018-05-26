@@ -10,13 +10,12 @@
   npm install --global yarn
 
 
-# chapter 1
+# Basic Setup (branch chapter 1)
   1)index.html setup<br/>
   2)basic component creation<br/>
   3)props and attributes<br/>
 
-#chapter 2
-### Tooling
+# Tooling (branch chapter 2)
 ##### 1) Prettier
 <p>install it via </p>
      
@@ -54,7 +53,7 @@
     
     ./node_modules/.bin/webpack-dev-server"   
     
-### Routing
+# Routing
 
 ##### 1)HashRouter
 <p>A Router that uses the hash portion of the URL (i.e. window.location.hash) to keep your UI in sync with the URL.</p>
@@ -98,9 +97,86 @@ Below is the command to install the propTypes package.
         
     npm install --save prop-types
        
+       
+### ... Spread operator
+It is used to split an array into a list of comma-separated values which can be used in various places such as function arguments or array matching.
+
+        function addThreeNumbers(a, b, c) {
+          return a + b + c;
+        }
+        
+        let sampleArr = [1, 2, 3];
+        console.log(addThreeNumbers(...sampleArr)); //6 
+        
+The spread operator can also be used with objects, though it is not a part of the ES6 spec, so you might need to use an extra plugin in your transpiler for it, or be careful with its browser support.
     
+        let obj1 = {a: 1, b: 2, c: 3};
+        
+        let obj2 = {p: 4,q: 5,r: 6};
+        
+        let obj3 = {...obj1, ...obj2 };
+        /* 
+          obj3 = {a: 1,b: 2, c: 3,p: 4, q: 5, r: 6 }
+        */
+
+### Styled components
+styled-components, the Modern Way to Handle CSS in React.
+styled-components utilises tagged template literals to style your components.
+It removes the mapping between components and styles. This means that when you're defining your styles, you're actually creating a normal React component, that has your styles attached to it.
+Below is the example of styled component
+
+        const Image = styled.img`
+          width:46%;
+          float:left;
+          margin-right:10px;
+        `
     
      
+ ## Managing state    
+ State is the local storage of the components and can be used only inside state full components. so we will now convert search component into stateful component to use states inside it.
+ Below is the example of stateful component
+        
+        class Search extends Component {
+          constructor(props){
+            super(props)
+            this.state ={
+              searchTerm : 'hello'
+            }
+            this.handlerSearchTermChange = this.handlerSearchTermChange.bind(this)
+          }
+          handlerSearchTermChange(event){
+            this.setState({searchTerm:event.target.value})
+          }
+          render (){
+            return (
+              <div className='search container'>
+                <header>
+                  <h1>video</h1>
+                  <input
+                    onChange={this.handlerSearchTermChange}
+                    value={this.state.searchTerm}
+                    type="text"
+                    placeholder="Search"/>
+                </header>
+                {preload.shows.map((show)=>(
+                  <ShowCard show = {show} key={show.imdbID}/>
+                ))}
+              </div>
+            )
+          }
+        }
+ 
+  instead of bind the method in constructor you can method as below
      
-     
+     handlerSearchTermChange = (event) => {
+         this.setState({searchTerm:event.target.value})
+       }
     
+### filtering
+We use the filter method to filter the data based on the search text
+    
+    {preload.shows
+              .filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase())>=0)
+              .map((show)=>(
+              <ShowCard show = {show} key={show.imdbID}/>
+            ))}

@@ -512,9 +512,13 @@ html {
 
 .search > div {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  margin-top: 25px;
+  height: 16rem;
+  min-height: 16rem;
+  max-height: 16rem;
+
 }
 
 pre {
@@ -589,9 +593,6 @@ pre {
 //   font-size: 13px;
 }
 
-.search > header + div {
-  margin-top: 25px;
-}
 
 header {
   z-index: 10;
@@ -691,3 +692,11 @@ header > input {
 .details > header + section {
   margin-top: 25px;
 }
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
