@@ -9,7 +9,12 @@
     "api": "node ratingsAPI.js",
     "lint":"eslint **/*.{js,jsx} --quiet",
     "watch":"webpack --watch",
+    "test":"jest",
+    "test:update":"jest -u",
     "build":"webpack"
+  },
+  "jest":{
+    "snapshotSerializers":["jest-serializer-enzyme"]
   },
   "dependencies": {
     "axios": "0.16.1",

@@ -180,3 +180,26 @@ We use the filter method to filter the data based on the search text
               .map((show)=>(
               <ShowCard show = {show} key={show.imdbID}/>
             ))}
+            
+## Testing    
+We are using jest as a testing framework and using the snapshot testing to test our component.
+        
+        import React from 'react';
+        import renderer from 'react-test-renderer'
+        import Search from '../Search'
+        
+        test('Search renders correctly', ()=>{
+          const component = renderer.create(<Search/>)
+          const tree = component.toJSON();
+          expect(tree).toMatchSnapshot();
+        });
+ The problem with renderer is that if we do any change in another file that is depend on search file . that time also the search unit test cases will fail. to solve this issue we started using enzyme.
+  for enzyme testing add below code to the package.json . it tell jest when ever you encounter enzyme serialize it
+        
+        "jest":{
+            "snapshotSerializer":["jest-serializer-enzyme"]
+          },
+          
+  Run the below command for the testcases
+  
+    yarn test
