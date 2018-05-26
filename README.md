@@ -211,3 +211,7 @@ We are using jest as a testing framework and using the snapshot testing to test 
   To run istanbul to see the coverage report 
   
         yarn test:coverage
+        
+ ### Hot Module reload
+ webpack has a nifty ability to do what's called hot module reload (HMR.)
+ HMR will take your code, compile it on the fly, and then inject it into your live-running code. Pretty cool tech.

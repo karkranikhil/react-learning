@@ -20,7 +20,7 @@ class Search extends Component {
     return (
       <div className="search container">
         <header>
-          <h1>NixalarVideos</h1>
+          <h1>Nixalar Videos</h1>
           <input
             onChange={this.handlerSearchTermChange}
             value={this.state.searchTerm}
