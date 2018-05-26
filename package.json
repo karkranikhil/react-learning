@@ -10,6 +10,7 @@
     "lint":"eslint **/*.{js,jsx} --quiet",
     "watch":"webpack --watch",
     "test":"jest",
+    "test:coverage":"jest --coverage",
     "test:update":"jest -u",
     "build":"webpack"
   },
@@ -81,6 +82,7 @@
     "redux",
     "webpack",
     "nodejs",
+    "istanbul",
     "expressjs"
   ],
   "author": "nikhil karkra",

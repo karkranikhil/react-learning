@@ -203,3 +203,11 @@ We are using jest as a testing framework and using the snapshot testing to test 
   Run the below command for the testcases
   
     yarn test
+    
+    
+ ### istanbul   
+  Istanbul instruments your code to see what code gets run and then lets you when your tests are covering and/or not covering other parts. Run npm test -- --coverage.
+  
+  To run istanbul to see the coverage report 
+  
+        yarn test:coverage
