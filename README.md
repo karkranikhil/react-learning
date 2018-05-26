@@ -132,6 +132,39 @@ Below is the example of styled component
         `
     
      
-     
+ ## Managing state    
+ State is the local storage of the components and can be used only inside state full components. so we will now convert search component into stateful component to use states inside it.
+ Below is the example of stateful component
+        
+        class Search extends Component {
+          constructor(props){
+            super(props)
+            this.state ={
+              searchTerm : 'hello'
+            }
+            this.handlerSearchTermChange = this.handlerSearchTermChange.bind(this)
+          }
+          handlerSearchTermChange(event){
+            this.setState({searchTerm:event.target.value})
+          }
+          render (){
+            return (
+              <div className='search container'>
+                <header>
+                  <h1>video</h1>
+                  <input
+                    onChange={this.handlerSearchTermChange}
+                    value={this.state.searchTerm}
+                    type="text"
+                    placeholder="Search"/>
+                </header>
+                {preload.shows.map((show)=>(
+                  <ShowCard show = {show} key={show.imdbID}/>
+                ))}
+              </div>
+            )
+          }
+        }
+ 
      
     
