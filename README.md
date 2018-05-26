@@ -166,5 +166,17 @@ Below is the example of styled component
           }
         }
  
+  instead of bind the method in constructor you can method as below
      
+     handlerSearchTermChange = (event) => {
+         this.setState({searchTerm:event.target.value})
+       }
     
+### filtering
+We use the filter method to filter the data based on the search text
+    
+    {preload.shows
+              .filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase())>=0)
+              .map((show)=>(
+              <ShowCard show = {show} key={show.imdbID}/>
+            ))}
