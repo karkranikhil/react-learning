@@ -10,12 +10,12 @@
   npm install --global yarn
 
 
-# Basic Setup (branch chapter 1)
+# Basic Setup
   1)index.html setup<br/>
   2)basic component creation<br/>
   3)props and attributes<br/>
 
-# Tooling (branch chapter 2)
+# Tooling
 ##### 1) Prettier
 <p>install it via </p>
      
