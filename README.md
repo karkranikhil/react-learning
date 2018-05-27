@@ -10,12 +10,12 @@
   npm install --global yarn
 
 
-# Basic Setup (branch chapter 1)
+# Basic Setup
   1)index.html setup<br/>
   2)basic component creation<br/>
   3)props and attributes<br/>
 
-# Tooling (branch chapter 2)
+# Tooling
 ##### 1) Prettier
 <p>install it via </p>
      
@@ -180,3 +180,38 @@ We use the filter method to filter the data based on the search text
               .map((show)=>(
               <ShowCard show = {show} key={show.imdbID}/>
             ))}
+            
+## Testing    
+We are using jest as a testing framework and using the snapshot testing to test our component.
+        
+        import React from 'react';
+        import renderer from 'react-test-renderer'
+        import Search from '../Search'
+        
+        test('Search renders correctly', ()=>{
+          const component = renderer.create(<Search/>)
+          const tree = component.toJSON();
+          expect(tree).toMatchSnapshot();
+        });
+ The problem with renderer is that if we do any change in another file that is depend on search file . that time also the search unit test cases will fail. to solve this issue we started using enzyme.
+  for enzyme testing add below code to the package.json . it tell jest when ever you encounter enzyme serialize it
+        
+        "jest":{
+            "snapshotSerializer":["jest-serializer-enzyme"]
+          },
+          
+  Run the below command for the testcases
+  
+    yarn test
+    
+    
+ ### istanbul   
+  Istanbul instruments your code to see what code gets run and then lets you when your tests are covering and/or not covering other parts. Run npm test -- --coverage.
+  
+  To run istanbul to see the coverage report 
+  
+        yarn test:coverage
+        
+ ### Hot Module reload
+ webpack has a nifty ability to do what's called hot module reload (HMR.)
+ HMR will take your code, compile it on the fly, and then inject it into your live-running code. Pretty cool tech.

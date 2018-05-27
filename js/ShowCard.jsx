@@ -1,6 +1,6 @@
 import React from 'react';
-import {shape, string} from 'prop-types'
-import styled from 'styled-components'
+import { shape, string } from 'prop-types';
+import styled from 'styled-components';
 // shape just means object
 
 const Wrapper = styled.div`
@@ -16,7 +16,7 @@ const Image = styled.img`
   width:46%;
   float:left;
   margin-right:10px;
-`
+`;
 const ShowCard = props => (
   <Wrapper>
     <Image src={`/public/img/posters/${props.show.poster}`} alt={`${props.show.title} Show Poster`} />
@@ -27,13 +27,13 @@ const ShowCard = props => (
     </div>
   </Wrapper>
 );
-ShowCard.defaultProps ={}
-ShowCard.propTypes ={
-  show:shape({
-    poster:string.isRequired,
-    title:string.isRequired,
-    year:string.isRequired,
-    description:string.isRequired
+ShowCard.defaultProps = {};
+ShowCard.propTypes = {
+  show: shape({
+    poster: string.isRequired,
+    title: string.isRequired,
+    year: string.isRequired,
+    description: string.isRequired
   }).isRequired
-}
+};
 export default ShowCard;
